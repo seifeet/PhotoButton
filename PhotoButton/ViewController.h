@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class PhotoButton;
+
 @interface ViewController : UIViewController
+{
+}
+
+@property (nonatomic, assign) IBOutlet PhotoButton *photoButton;
+
+- (IBAction)photoSaved:(id)sender;
 
 @end

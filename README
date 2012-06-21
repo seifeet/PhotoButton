@@ -1,0 +1,19 @@
+PhotoButton is a control based on UIButton.
+When PhotoButton is touched inside it displays a UIActionSheet that allows us to either choose a photo from the camera roll or to take a picture.
+Once a picture is selected/taken the picture is resized and saved to the Documents folder.
+The picture is then displayed as the button background until deleted.
+
+The PhotoButton can be added as a regular UIButton in a xib file with Class in Identity Inspector set as PhotoButton.
+
+Configuration:
+
+    1) self.photoButton.viewController = self;
+    2) self.photoButton.photoSize = CGSizeMake(256, 256);
+    3) self.photoButton.photoName = @"ProfileUserPhoto.jpg";
+    4) [self.photoButton addTarget:self action:@selector(photoSaved:) forControlEvents:UIControlEventValueChanged];
+
+    1) viewController is a view where UIActionSheet will be displayed
+    2) photoSize is the size to which the photo is resized
+    3) photoName is the name under which the photo is saved in the Documents folder
+    4) photoSaved is called once the photo is saved
+ 

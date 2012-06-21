@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "PhotoButton.h"
 
 @interface ViewController ()
 
@@ -14,10 +15,21 @@
 
 @implementation ViewController
 
+@synthesize photoButton;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.photoButton.viewController = self;
+    self.photoButton.photoSize = CGSizeMake(256, 256);
+    self.photoButton.photoName = @"ProfileUserPhoto.jpg";
+    [self.photoButton addTarget:self action:@selector(photoSaved:) forControlEvents:UIControlEventValueChanged];
+}
+
+# pragma mark - selectors
+- (IBAction)photoSaved:(id)sender {
+    // will be once the image is saved locally
 }
 
 - (void)viewDidUnload
